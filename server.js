@@ -10,7 +10,7 @@ io.on('connection', function (socket){
 	console.log('User connected via socket.io!');
 
 	socket.on('message', function (message){
-		console.log('Message received:'+ message.text);
+		console.log('Message received: '+ message.text);
 		// io.emit(); // sends to every person included the sender
 		socket.broadcast.emit('message', message); // sends to everybody excluded the sender
 	});
